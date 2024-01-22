@@ -16,4 +16,5 @@ The data and its generation method are explained in [Data](#my-data).
 
 ## Data
 [data]:#my-data
-![Generate training data](https://github.com/Linshuhuai/P-CodeSum/blob/master/figures/Generating%20training%20data.pdf)
+
+<img src="figures/Generating training data.pdf" style="zoom: 70%;" />
