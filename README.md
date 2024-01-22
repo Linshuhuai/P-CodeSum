@@ -16,5 +16,3 @@ The data and its generation method are explained in [Data](#my-data).
 
 ## Data
 [data]:#my-data
-
-<img src="figures/Generating training data.pdf" style="zoom: 70%;" />
