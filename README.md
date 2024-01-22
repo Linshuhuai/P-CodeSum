@@ -32,5 +32,3 @@ Here is the statistics of our datasets:
 | Ruby | chef/omnibus | 199 | 10 | 159 |
 
 The code for generating training data and the generated training data are located in the folders 'code' and 'data', respectively.
-
-## Result
