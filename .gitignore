@@ -1,1 +1,12 @@
 .DS_Store
+
+# 忽略构建数据集的中间结果
+data/jain-slee/text-davinci-003/data_5_25/*.jsonl
+data/badger/text-davinci-003/data_5_25/*.jsonl
+data/contracts/text-davinci-003/data_5_25/*.jsonl
+data/omnibus/text-davinci-003/data_5_25/*.jsonl
+data/Payum/text-davinci-003/data_5_25/*.jsonl
+
+# 忽略构建数据集的 pycache
+code/__pycache__/
+code/evaluator/__pycache__/
