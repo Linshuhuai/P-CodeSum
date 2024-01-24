@@ -19,9 +19,11 @@ The training data and its generation method are explained in [Data](#my-data).
 ## Data
 [data]:#my-data
 
+![Generate training data](https://github.com/Linshuhuai/P-CodeSum/blob/master/figures/DataGenerating.png)
+
 Training the project-specific prompt selector necessitates the collection of positive and negative data samples. Recognizing the expensive time and effort associated with manual annotation of training data, we employ an LLM to automatically craft high-quality training data.
 
-Here is the statistics of our datasets: 
+We use six project from **** to generate training & test data. Here is the statistics of them: 
 | Languages                                                                     | Projects | # of examples  | # of in-context examples | # of test examples |
 |---------------------------------------------------------------------------|--| ---- | ---- | ---- |
 | Python | h2oai/h2o-3 | 268 | 10 | 228 |
