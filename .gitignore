@@ -7,6 +7,13 @@ data/contracts/text-davinci-003/data_5_25/*.jsonl
 data/omnibus/text-davinci-003/data_5_25/*.jsonl
 data/Payum/text-davinci-003/data_5_25/*.jsonl
 
+# 忽略未划分的标记结果
+data/jain-slee/text-davinci-003/tmp.jsonl
+data/badger/text-davinci-003/tmp.jsonl
+data/contracts/text-davinci-003/tmp.jsonl
+data/omnibus/text-davinci-003/tmp.jsonl
+data/Payum/text-davinci-003/tmp.jsonl
+
 # 忽略构建数据集的 pycache
 code/__pycache__/
 code/evaluator/__pycache__/
