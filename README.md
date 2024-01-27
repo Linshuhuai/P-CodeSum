@@ -24,6 +24,7 @@ The training data of the neural prompt selector and its generation method are ex
 Training the project-specific prompt selector necessitates the collection of positive and negative data samples. Recognizing the expensive time and effort associated with manual annotation of training data, we employ an LLM to automatically craft high-quality training data.
 
 We use six project for code summarization task from [CodeXGLUE](https://github.com/microsoft/CodeXGLUE) to generate training and test data of the neural prompt selector. Here is the statistics of them: 
+
 |Languages|Projects|# of examples|# of in-context examples|# of test examples|
 |:------:|:--:|:----:|:----:|:----:|
 | Python | h2oai/h2o-3 | 268 | 10 | 228 |
