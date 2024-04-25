@@ -49,8 +49,6 @@ Finally, we obtain a dataset of 750 samples for building the project-specific se
 
 Train/test data for prompt selector of each project is under **./data**.
 
-## Train
-
 ## Main Result
 
 <img src="./figures/mainresult.png" width="750"><br/>
