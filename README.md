@@ -18,10 +18,8 @@ For each specific project, we construct a pool of in-context examples, i.e., (co
 
 The prompt selector aims to score examples in the pool of project-specific (code, summary) pairs and then select the optimal in-context examples that could elicit LLMs to generate high-quality summaries when acting as prompts. 
 
-The following figure illustrates the architecture of the prompt selector. Inspired by prompt tuning, we optimize CodeBERT by merely adjusting its input sequence. More specifically, we insert a number of trainable prompt tokens into the input sequence of CodeBERT, which casts the project-specific code summarization task to the same form as the pertaining objective. During training, we only adjust the embedding parameters corresponding to the prompt tokens, while keeping most of the prior knowledge learned during pre-training. 
+Inspired by prompt tuning, we optimize CodeBERT by merely adjusting its input sequence. More specifically, we insert a number of trainable prompt tokens into the input sequence of CodeBERT, which casts the project-specific code summarization task to the same form as the pertaining objective. During training, we only adjust the embedding parameters corresponding to the prompt tokens, while keeping most of the prior knowledge learned during pre-training. 
 This mitigates the threat of overfitting with small project-specific data and reduces the computation cost of PLMs significantly. Hence, it allows few-shot learning for pre-trained models with limited labeled samples.
-
-<img src="./figures/discriminator.png" width="750"><br/>
 
 ## Dataset
 
@@ -41,14 +39,22 @@ The statistics of the datasets we used are presented in the following table:
 | Ruby | chef/omnibus | 199 | 10 | 159 |
 
 Then, we leverage LLMs to generate candidate training samples for prompt selector. For each (code, summary) pairs ($x$, $y$) from the 30 seeds ($y$ is taken as the summary reference of the code query $x$), we select 5 (code, summary) examples from the in-context example pool and use them to construct a corresponding prompt $p$. Then the LLM takes $p$ as input and generates a summary $y'$. For each code query $x$ from the 30 seeds, we select 25 different sets of in-context examples in turn and generate 25 corresponding summaries. We measure the quality of examples using the BLEU-4 and ROUGE-L scores between the generated summary $y'$ and the ground-truth summary $y$. 
-We take the average BLEU-4 and ROUGE-L scores of the 25 summaries as the thresholds to judge whether a set of in-context examples are useful for the code query $x$. Examples that gain higher scores than the threshold will be selected to prompt the LLM. The figure below shows this process:
-
-<img src="./figures/datagen.png" width="750"><br/>
+We take the average BLEU-4 and ROUGE-L scores of the 25 summaries as the thresholds to judge whether a set of in-context examples are useful for the code query $x$. Examples that gain higher scores than the threshold will be selected to prompt the LLM.
 
 Finally, we obtain a dataset of 750 samples for building the project-specific selector, with 500 and 250 for training and testing, respectively. Each training sample consists of three fields, including a code query, five in-context examples, and a label indicating whether the sample is useful or not.
 
 Train/test data for prompt selector of each project is under **./data**.
 
-## Main Result
+## Train
 
-<img src="./figures/mainresult.png" width="750"><br/>
+To Do.
+
+## Main Results
+
+We compare P-CodeSum against two categories of code summarization techniques, namely, fine-tuned code PLMs and LLMs with in-context learning. For fine-tuned code PLMs, we select CodeBERT and CodeT5, representing encode-only and encode-decode models, respectively. In the realm of LLMs, we choose ChatGPT and Codex. We employ various strategies for selecting in-context examples, including random selection, prompt retrieval, and prompt learning. We also evaluate P-CodeSum on two LLMs: DeepSeek-Coder (6.7b) and ChatGPT (text-davinci-003). All the baselines demonstrate impressive performance on code summarization tasks. Overall, our approach (ChatGPT+P-CodeSum) significantly outperforms all baselines.
+
+To assess the impact of the prompt selector, we compare P-CodeSum with a variant that excludes the prompt selector, i.e., randomly selects in-context examples from the example pool. By using the prompt selector, both ChatGPT and DeepSeek-Coder attain a soar improvement in performance. This indicates that the prompt selector is an essential component in P-CodeSum to generating high-quality project-specific code summaries.
+
+<div style="text-align:center;">
+  <img src="./figures/mainresult.png" width="300" alt="Main Result">
+</div>
