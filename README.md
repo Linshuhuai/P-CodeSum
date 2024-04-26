@@ -43,11 +43,17 @@ We take the average BLEU-4 and ROUGE-L scores of the 25 summaries as the thresho
 
 Finally, we obtain a dataset of 750 samples for building the project-specific selector, with 500 and 250 for training and testing, respectively. Each training sample consists of three fields, including a code query, five in-context examples, and a label indicating whether the sample is useful or not.
 
+Code of generating the training data for prompt selector is under **./code/datagen**.
+
 Train/test data for prompt selector of each project is under **./data**.
 
-## Train
+## Run
 
 To Do.
+
+```
+source run/code_summary.sh
+```
 
 ## Main Results
 
