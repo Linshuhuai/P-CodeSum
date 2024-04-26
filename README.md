@@ -58,5 +58,5 @@ We compare P-CodeSum against two categories of code summarization techniques, na
 To assess the impact of the prompt selector, we compare P-CodeSum with a variant that excludes the prompt selector, i.e., randomly selects in-context examples from the example pool. By using the prompt selector, both ChatGPT and DeepSeek-Coder attain a soar improvement in performance. This indicates that the prompt selector is an essential component in P-CodeSum to generating high-quality project-specific code summaries.
 
 <div style="text-align:center;">
-  <img src="./figures/mainresult.png" width="350" alt="Main Result">
+  <img src="./figures/mainresult.png" width="450" alt="Main Result">
 </div>
