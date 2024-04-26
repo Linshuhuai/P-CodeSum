@@ -51,10 +51,6 @@ Train/test data for prompt selector of each project is under **./data**.
 
 To Do.
 
-```
-source run/code_summary.sh
-```
-
 ## Main Results
 
 We compare P-CodeSum against two categories of code summarization techniques, namely, fine-tuned code PLMs and LLMs with in-context learning. For fine-tuned code PLMs, we select CodeBERT and CodeT5, representing encode-only and encode-decode models, respectively. In the realm of LLMs, we choose ChatGPT and Codex. We employ various strategies for selecting in-context examples, including random selection, prompt retrieval, and prompt learning. We also evaluate P-CodeSum on two LLMs: DeepSeek-Coder (6.7b) and ChatGPT (text-davinci-003). All the baselines demonstrate impressive performance on code summarization tasks. Overall, our approach (ChatGPT+P-CodeSum) significantly outperforms all baselines.
