@@ -20,3 +20,5 @@ code/evaluator/__pycache__/
 
 # 忽略 method README.md
 code/method/README.md
+
+/experimental_result
