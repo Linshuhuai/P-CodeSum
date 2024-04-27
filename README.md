@@ -21,7 +21,7 @@ The prompt selector aims to score examples in the pool of project-specific (code
 Inspired by prompt tuning, we optimize CodeBERT by merely adjusting its input sequence. More specifically, we insert a number of trainable prompt tokens into the input sequence of CodeBERT, which casts the project-specific code summarization task to the same form as the pertaining objective. During training, we only adjust the embedding parameters corresponding to the prompt tokens, while keeping most of the prior knowledge learned during pre-training. 
 This mitigates the threat of overfitting with small project-specific data and reduces the computation cost of PLMs significantly. Hence, it allows few-shot learning for pre-trained models with limited labeled samples.
 
-## Dataset
+## Data
 
 Training the project-specific prompt selector necessitates the collection of positive and negative data samples. Recognizing the expensive time and effort associated with manual annotation of training data, we employ an LLM to automatically craft high-quality training data.
 
@@ -46,6 +46,24 @@ Finally, we obtain a dataset of 750 samples for building the project-specific se
 Code of generating the training data for prompt selector is under **./code/datagen**.
 
 Train/test data for prompt selector of each project is under **./data**.
+
+## Method
+
+Code of our approach is under **./code/method**.
+
+### Train
+
+train P-CodeSum in **./run/train.sh**.
+```
+source ./run/train.sh
+```
+
+### Evaluate
+
+evaluate P-CodeSum in **./run/evaluate.sh**.
+```
+source ./run/evaluate.sh
+```
 
 ## Main Results
 
